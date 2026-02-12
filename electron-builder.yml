@@ -84,9 +84,7 @@ extraResources:
 
 win:
   target:
-    - nsis
-#    - msi
-    - zip
+    - dir
   # icon: resources/app.ico  # Temporarily disabled - current ico is 32x32, need 256x256+
   artifactName: ${productName}-${version}-${os}-${arch}.${ext}
 
