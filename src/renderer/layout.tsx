@@ -18,6 +18,7 @@ import { useDirectorySelection } from './hooks/useDirectorySelection';
 import { useMultiAgentDetection } from './hooks/useMultiAgentDetection';
 import { processCustomCss } from './utils/customCssProcessor';
 import UpdateModal from '@/renderer/components/UpdateModal';
+import appLogo from '@renderer/assets/logos/app.png';
 
 const useDebug = () => {
   const [count, setCount] = useState(0);
@@ -202,7 +203,7 @@ const Layout: React.FC<{
                 'cursor-pointer group ': collapsed,
               })}
             >
-              <div
+              {/* <div
                 className={classNames('bg-black shrink-0 size-40px relative rd-0.5rem', {
                   '!size-24px': collapsed,
                 })}
@@ -219,8 +220,15 @@ const Layout: React.FC<{
                   <circle key='logo-circle' cx='40' cy='46' r='3' fill='white'></circle>
                   <path key='logo-path-2' d='M18 50 Q40 70 62 50' stroke='white' strokeWidth='3.5' fill='none' strokeLinecap='round'></path>
                 </svg>
+              </div> */}
+              <div className={classNames('bg-black shrink-0 size-40px relative rd-0.5rem', {
+                '!size-24px': collapsed,
+              })} onClick={onClick}>
+                <img src={appLogo} alt="Logo" className="w-full h-full object-cover" />
               </div>
-              <div className=' flex-1 text-20px collapsed-hidden font-bold'>AionUi</div>
+
+              
+              <div className=' flex-1 text-20px collapsed-hidden font-bold'>TJAD-CoWork</div>
               {isMobile && !collapsed && (
                 <button type='button' className='app-titlebar__button' onClick={() => setCollapsed(true)} aria-label='Collapse sidebar'>
                   {collapsed ? <MenuUnfold theme='outline' size='18' fill='currentColor' /> : <MenuFold theme='outline' size='18' fill='currentColor' />}
